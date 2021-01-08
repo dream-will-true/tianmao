@@ -1,0 +1,42 @@
+.container {
+  position: relative;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+#header {
+  position: relative;
+  margin-top: 22px;
+  margin-bottom: 22px;
+}
+
+#header .left {
+  float: left;
+  width: 110px;
+  margin: 22px;
+}
+
+#header .left .icon-taobaowanglogo {
+  font-size: 35px;
+  position: absolute;
+  top: 0px;
+  color: orangered;
+}
+
+#header .left .icon-taobaowangzimu {
+  font-size: 50px;
+  position: absolute;
+  top: 10px;
+  color: orangered;
+}
+
+#header .right {
+  float: right;
+  line-height: 44px;
+  color: #666;
+}
+
+#header .right .icon-xinxi2 {
+  color: orangered;
+  font-size: 12px;
+}

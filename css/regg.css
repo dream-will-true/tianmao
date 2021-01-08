@@ -1,0 +1,185 @@
+
+.container{
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+}
+input::placeholder{
+    font-size: 8px;
+    text-indent: 10px;
+}
+
+.alert{
+    display: none;
+    position: fixed;
+    left:600px;
+    top: 0px;
+    text-align: center;
+    width: 160px;
+    height: 60px;
+    line-height: 60px;
+    background-color: greenyellow;
+
+}
+
+#header{
+    position: relative;
+    margin-top: 22px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #666;
+}
+#header>.left{
+    float: left;
+    width: 110px;
+    margin: 22px;
+ 
+}
+#header>.left .icon-taobaowanglogo{
+    font-size: 35px;
+    position: absolute;
+    top: 0px;
+    color: orangered;
+}
+#header>.left .icon-taobaowangzimu{
+    font-size: 50px;
+    position: absolute;
+    top: 10px;
+    color: orangered;
+}
+#header>.right {
+    float: right;
+ 
+    line-height: 44px;
+    color: #666;
+}
+#header>.right .icon-xinxi2{
+    color: orangered;
+    font-size: 12px;
+}
+
+.form{
+    margin: 20px auto;
+    width: 400px;
+}
+.form div{
+    width: 100%;
+    height: 80px;
+    overflow: hidden;
+}
+.form div p{
+   line-height: 40px;
+   font-size: 16px;
+   width: 25%;
+ 
+   height: 49%;
+   color: #333;
+}
+.form div input{
+    /* float: left; */
+    width: 99%;
+    height: 49%;
+    border: 1px solid #666;
+    font-size: 14px;
+    outline: none;
+    background-color: #fff;
+  }
+  .form  button{
+      background-color: orangered;
+      color: #fff;
+      font-size: 18px;
+      height: 45px;
+      line-height: 45px;
+      border: none;
+      width: 50%;
+      margin: 34px 113px;
+      text-align: center;
+
+  }
+h2{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    color: orangered;
+}
+
+  #footer{
+    border-top: 1px solid #666;
+}
+#footer .foot-before .after-sale{
+    position: relative;
+    width: 990px;
+    height: 100px;
+    margin: 25px auto;
+    /* background:url(https://img.alicdn.com/tfs/TB1I8svRXXXXXcUXpXXXXXXXXXX-990-100.jpg) no-repeat 100% 100%; */
+}
+#footer .foot-before .after-sale a{
+    height: 100px;
+    width: 247px;
+    display: block;
+    float: left;
+    
+}
+.shopping-nav {
+    border-top: 1px solid #ccc;
+}
+.shopping-nav dl{
+    margin-top: 22px;
+    float: left;
+    width: 186px;
+    padding-left: 52px;
+}
+
+.shopping-nav dl dt{
+    color: #646464;
+    font-size: 16px;
+    font-weight: 700;
+    height: 30px;
+    line-height: 30px;
+    text-align: left;
+
+}
+.shopping-nav dl dd a{
+    width: 100px;
+    overflow: hidden;
+    text-align: left;
+    height: 20px;
+    line-height: 20px;
+    color: #8b8b8b;
+}
+.shopping-nav dl dd a img{
+    width: 105px;
+    left: 105px;
+}
+#footer .foot-last {
+    background-color: #000;
+
+}
+#footer .foot-last .foot-intro .foot-ul1 li{
+    float: left;
+    padding: 5px;
+    color: #fff;
+
+}
+#footer .foot-last .foot-intro .foot-ul1 li a {
+    color: #fff;
+    line-height: 25px;
+    
+    
+}
+.foot-p{
+    margin-left: 5px;
+}
+.foot-p .foot-span{
+     line-height: 30px;
+
+ }
+.foot-p span{
+    color: #a4a4a4;
+    margin-right: 65px;
+    line-height: 16px;
+
+}
+.foot-p a img{
+    height: 30px;
+    margin: 20px 5px;
+}

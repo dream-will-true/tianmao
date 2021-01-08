@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../css/enter.css">
+    <link rel="stylesheet" href="../css/iconfont.css">
+    <script src="../js/jquery1.12.4.min.js"></script>
+    
+</head>
+<body>
+    <div id="page">
+        <header id="header" class=" container clearfix">
+            <a href="./index.html" class="left">
+                <i class="iconfont icon-taobaowanglogo"></i>
+                <i class="iconfont icon-taobaowangzimu"></i>
+            </a>
+            <a href="https://survey.taobao.com/survey/Q095thIx2" class="right">
+                <i class="iconfont icon-xinxi2"></i>"登录页面改进建议"
+            </a>
+        </header>
+        <div class="login-newbg">
+            <div class="container">
+                <div class="login-adlink">
+                    <a href=""></a>
+                </div>
+                <div class="login-box-warp">
+                  
+                    <div class="login-box">
+                        <p class="login-box-warp-righttop-p">扫码登录更安全</p>
+                        <div class="login-box-warp-righttop">
+                            <i class="iconfont icon-gengduo1  "></i>
+                        </div>
+                      
+                        <span class="tab-item">密码登录</span>
+                        <span class="tab-item1">二维码登录</span>
+                        <!-- <p class="pp"><span></span> </p>
+                        <p class="pp"><span></span> </p> -->
+                        <div class="id-dl">
+                         
+                            <div class="input-plain-wrap input-wrap-loginid ">
+                                <label for="input-id" class="uerid">
+                                    <i class="iconfont icon-renxiang"></i>
+                                </label>
+                                
+                                <input type="text" name="user-id" id="input-id" class="input-id" placeholder="会员名/邮箱/手机号">
+    
+                            </div>
+                            <div class="input-plain-wrap input-wrap-loginid ">
+                                <label for="input-password" class="uerid">
+                                    <i class="iconfont icon-renxiang"></i>
+                                </label>
+                                
+                                <input type="password" name="user-password" id="input-password" class="input-id" placeholder="请输入登录密码">
+                               
+                            </div>
+                            <div class="login-err"></div>
+                            <button class="submit">
+                                登录
+                            </button>
+                         
+
+                         
+
+                        </div>
+                        <div class="id-dl1"> <img src="data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAAQ0AAAENCAIAAACacKdfAAAFd0lEQVR42u3d0W7jOAwF0Hrg///lznsmu1DNkpSYc94GSGrZzoUEQkNd39/fX8D/+uMRgJyAnICcwCbul39f17XbEN9WGt6OU01iq6e0fvX9f3XmE7DuAjkBOQE5ATmBSe6VD/VWEoNfDxYig1Xp4IWCt1kmY0hb/erMJ2DdBXICcgJyAnICk9yPvxms4W64a7Vs8Bk7oHu33Jbt6e761ZlPQE5ATkBOQE5ATmCS+9BxZ2zj7d1yu371smJxcLPzpLYe5hOQE5ATkBOQE5ATmOSedDMZpdW3TunbmzGko/tdmE9ATkBOQE5ATkBOgK9IXXjDhrYZg8/YgxwsmPa2YtiwYYX5BKy7QE5ATkBOADmBH1mqC/eWAtcFT37rLQF/yCfXbfWrM5+AnICcgJyAnICcwCSvdeGje8JmbCLurU5mFLWDV+/tTWE+ATkBOQE5ATkB5ATinveRKCvCblg0DPZ8KHt0wYPj1t/7enfj3gYgjy9kPgHrLpATkBOQE5ATmOS1LpxxplmwOnn08WUZ977+9eA4g9XeSccAmk9ATkBOQE5ATkBOYJJf7i/cWyzOGFJZqbrsbwafUlBv6f/xAzGfgHUXyAnICcgJyAlMcr3UvzLa6Z5SWj1lX/OGt5nxY9jqV2c+AesukBOQE5ATkBOY5PrdwmXvKW1Bp5zSdvTr6K01P/6k+QSsu0BOQE5ATkBOYJKl/cIbFjfLzh/L0NsZI2Ocvc06Cs6yM5+AdRfICcgJyAnICUzyvI/EhtXJsnF2VSd/5UIbvs39fzbmE7DuAjkBOQE5ATmBSe7f/XO9x8FlWL9Q8I6Ct9nbBCNYhC2rNT9+SuYTkBOQE5ATkBOQE5hkqS5cdnja+tUzmgxklFaDd9TbdWHDjd4Zg9dHAqy7QE5ATkBOQE7g0yzVhXt3AfdupM1wyg7o4I+hrBNxwXs3n4CcgJyAnICcgJzAJK914bKjxoKfzPj6urIa7rx2z2XvXX9hsO4COQE5ATkBOQH+y7VST8zY39rbCCLj6utD6j04LuMVl73Nrp+i+QSsu0BOQE5ATkBOYJLndeGgsiLs+h31dpwo25SdYd44zScgJyAnICcgJyAnMNhrXbh3c27w66fsLM6oomYcRld23mBv9xLnzoF1F8gJyAnICcgJfJrn/YV7m0u8dXRri3WnnKS3PviyqvTjq5tPwLoL5ATkBOQE5AQmuR5X347u+dC7a7W36fC8O8p47+YTsO4COQE5ATkBOYHBlvpInNK0YcNPlt3mD175yb2Vy9oT2y8M1l0gJyAnICcgJzDY3XXhU3YB91ZRj66Jn9JcwnwCcgJyAnICcgJyAp9m1H7hdadsue29zQ0fSNnztF8YrLtATkBOQE5ATmCw53Xh939uv324GbtW15W1oThlSL1/03wCcgJyAnICcgJyAnzV1IUzHL05d8MD2XrfZi/nzoF1F8gJyAnICcgJfJprw//svzTuk/vh9nZd2HC3ctngzScgJyAnICcgJyAnwNe/585tuEX0bdUvWNhVAi54R8HXkdG95PHXzSdg3QVyAnICcgJyApPcKx/qrWMGlZVre4/sy3jyGRX5jNu0Xxisu0BOQE5ATgA5gR+5H3/zlH4Cp+yZDT7k9RpuxkMu+9l0Dd58AnICcgJyAnICcgKT3J9526dUPDNqzadcaP2Twbfp3Dmw7gI5ATkBOQE5gU8zqi6c0TV4/esZQ/qQp5TxyeAD0V8YrLtATkBOQE5ATmCw53Xhsjpm8Oobtr4NbnrdsMPv+pM/peGy+QTkBOQE5ATkBOQEBluqC5f1hO0VrDVnbHrt3cK8YbeNrp+i+QTkBOQE5ATkBOQEJrl6t/2C+QTkBOQEkBP4gb8tRuX36ozg2gAAAABJRU5ErkJggg==" alt=""></div>
+                        <p class="weibozhifu">
+                            <a href=""> <i class="iconfont icon-weibo"></i><span>微博登录</span></a>
+                                <a href=""> <i class="iconfont icon-weixin-copy"></i><span>微信登录</span></a>
+                        </p>
+                        <p class="forget">
+                           <a href=""> <span class="forgetid">忘记密码</span></a>
+                           <a href="">     <span class="forgetpossword">忘记用户名</span></a>
+                            <a href="./reg.html">   <span class="freeid">免费注册</span></a>
+
+                        </p>                       
+                    </div>
+                    <script>
+                       
+                             $('.tab-item').click(function () {
+                                 console.log(111)
+                                 $(this).css({
+                                     backGround:'#ccc',
+                                     color:"orangered"
+                                     })
+                                $('.tab-item1').css({
+                                     backGround:'#ccc',
+                                     color:"#000"
+                                     })
+                                $('.id-dl').show()
+                                // css({dispaiy:'block'})
+                                $('.id-dl1').hide()
+                                // css({dispaiy:'none'})
+                             }
+                              
+                             )
+                             $('.tab-item1').click(function () {
+                                $('.id-dl1').show()
+                                // css({dispaiy:'block'})
+                                $('.id-dl').hide()
+                                // css({dispaiy:'none'})
+                                $(this).css({
+                                     backGround:'#ccc',
+                                     color:"orangered"
+                                     })
+                                $('.tab-item').css({
+                                     backGround:'#ccc',
+                                     color:"#000"
+                                     })
+                             }
+                              
+                             )
+
+
+
+                          
+                        $('.submit').click( function(){
+                         var userId=$('#input-id').val()
+                         var userPassWord=$('#input-password').val()
+                         if(userPassWord==  localStorage.getItem($('#input-id').val())){
+                             location.href='./index.html'
+                         }else{
+                             $('.login-err').html("账户密码不正确，请重新输入").css(
+                            {
+                                fontSize: '12px',
+                                color: 'red',
+                                // textAlign:'center'
+                            }
+                        )
+
+                         }
+                       
+                    
+                        })
+                        
+                        </script>
+                </div>
+
+            </div>
+
+           
+
+
+
+
+        </div>
+         <div id="footer">
+        <div class="foot-before clearfix">
+            <div class="container">
+                <div class="after-sale clearfix">
+                    <!-- <a href=""></a>
+                    <a href=""></a>
+                    <a href=""></a>
+                    <a href=""></a> -->
+                </div>
+                <div class="shopping-nav">
+                    <dl>
+                        <dt>购物指南</dt>
+                        <dd><a href="">免费注册</a> </dd>
+                        <dd> <a href="">开源支付宝</a> </dd>
+                        <dd> <a href="">支付宝充值</a> </dd>
+                    </dl>
+                    <dl>
+                        <dt>天猫保障</dt>
+                        <dd><a href="">发货保障</a> </dd>
+                        <dd> <a href="">售后规则</a> </dd>
+                        <dd> <a href="">缺货赔付</a> </dd>
+                    </dl>
+                    <dl>
+                        <dt>支付方式</dt>
+                        <dd><a href="">快捷支付</a> </dd>
+                        <dd> <a href="">信用卡</a> </dd>
+                        <dd> <a href="">余额宝</a> </dd>
+                        <dd> <a href="">蚂蚁花呗</a> </dd>
+                        <dd> <a href="">货到付款</a> </dd>
+                    </dl>
+                    <dl>
+                        <dt>商家服务</dt>
+                        <dd><a href="">天猫规则</a> </dd>
+                        <dd> <a href="">商家入驻</a> </dd>
+                        <dd> <a href="">商家中心</a> </dd>
+                        <dd> <a href="">天猫智库</a> </dd>
+                        <dd> <a href="">物流服务</a> </dd>
+                        <dd> <a href="">喵言喵语</a> </dd>
+                        <dd> <a href="">运营服务</a> </dd>
+                    </dl>
+                    <dl>
+                        <dt>手机天猫</dt>
+                        <dd> <a href=""> <img src="https://img.alicdn.com/tfscom/TB14MWoNhjaK1RjSZFAwu2dLFXa.png"
+                                    alt=""></a></dd>
+
+                    </dl>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="foot-last">
+            <div class="foot-intro container">
+                <ul class="foot-ul1 clearfix">
+                    <li><a href="">关于天猫</a></li>
+                    <li><a href="">帮助中心</a></li>
+                    <li><a href="">开放平台</a></li>
+                    <li><a href="">诚聘英才</a></li>
+                    <li><a href="">联系我们</a></li>
+                    <li><a href="">网站合作</a></li>
+                    <li><a href="">法律声明</a></li>
+                    <li><a href="">隐私权政策</a></li>
+                    <li><a href="">知识产权</a></li>
+                    <li><a href="">廉正举报</a></li>
+                    <li><a href="">规则意见征集</a></li>
+
+
+                </ul>
+                <ul class="foot-ul1 clearfix">
+                    <li><a href="">阿里巴巴集团</a>&nbsp;|</li>
+                    <li><a href="">淘宝网</a>&nbsp;|</li>
+                    <li><a href="">天猫</a>&nbsp;|</li>
+                    <li><a href="">聚划算</a>&nbsp;|</li>
+                    <li><a href="">全球速卖通</a>&nbsp;|</li>
+                    <li><a href="">阿里巴巴国际交易市场</a>&nbsp;|</li>
+                    <li><a href="">1688</a>&nbsp;|</li>
+                    <li><a href="">阿里妈妈</a>&nbsp;|</li>
+                    <li><a href="">飞猪</a>&nbsp;|</li>
+                    <li><a href="">廉正举报</a>&nbsp;|</li>
+                    <li><a href="">AliOS</a>&nbsp;|</li>
+                    <li><a href="">阿里通信</a>&nbsp;|</li>
+                    <li><a href="">万网</a>&nbsp;|</li>
+                    <li><a href="">高德</a>&nbsp;|</li>
+                    <li><a href="">友盟</a>&nbsp;|</li>
+                    <li><a href="">钉钉</a>&nbsp;|</li>
+                    <li><a href="">虾米</a>&nbsp;|</li>
+                    <li><a href="">钉钉</a>&nbsp;|</li>
+                    <li><a href="">阿里安全</a>&nbsp;|</li>
+                </ul>
+                <p class="foot-p p-hl">
+                    <span class="foot-span">增值电信业务经营许可证： 浙B2-20110446</span>
+                    <span class="foot-span"> 市场名称登记证：工商网市字3301004119号</span>
+                    <span class="foot-span"> 出版物网络交易平台服务经营备案证： 新出发浙备字第2019002号</span>
+                </p>
+                <p class="foot-p">
+                    <span>互联网违法和不良信息举报电话：0571-81683755 blxxjb@alibaba-inc.com</span>
+                    <span>互联网药品信息服务资质证书编号：浙-（经营性）-2017-0005</span>
+                    <span> 浙公网安备 33010002000120号</span>
+                </p>
+                <p class="foot-p">
+                    <span>医疗器械网络交易服务第三方平台备案：（浙）网械平台备字[2018]第00002号</span>
+                </p>
+                <p class="foot-p">
+                    <span>浙江省网络食品销售第三方平台提供者备案：浙网食A33010002</span>
+                    <span> 12318举报</span>
+
+                </p>
+                <p class="foot-p">
+                    <span>© 2003-2020 TMALL.COM 版权所有</span>
+
+                </p>
+                <p class="foot-p">
+                    <a href=""><img src="https://img.alicdn.com/tfs/TB1MQX3cBr0gK0jSZFnXXbRRXXa-65-70.gif" alt=""></a>
+                    <a href=""><img src="https://img.alicdn.com/tps/i1/TB13mgzHXXXXXbjXVXXzby4IVXX-80-30.jpg"
+                            alt=""></a>
+                </p>
+            </div>
+        </div>
+        </div>
+
+
+
+    </div>
+
+  
+</body>
+
+</html>

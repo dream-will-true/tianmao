@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>购物车</title>
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../css/iconfont.css">
+    <link rel="stylesheet" href="../css/echar.css">
+    <script src="../js/jquery1.12.4.min.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <div class="container header-nav">
+            <div><a href="">欢迎来到购物车 <i class="iconfont icon-arrow-bottom"></i></a> <a href="">手机逛淘宝</a></div>
+            <ul>
+                <li><a href="./index.html">淘宝网首页</a></li>
+                <li><a href="">我的淘宝 <i class="iconfont icon-arrow-bottom"></i></a></li>
+                <li><a href=""> <i class="iconfont icon-cart orangi"></i>购物车 <i
+                            class="iconfont icon-arrow-bottom"></i></a></li>
+                <li><a href="">收藏夹</a></li>
+                <li><a href="">商品分类</a></li>
+                <li><a href="">免费开店</a></li>
+                <li><a href="">千牛买家中心<i class="iconfont icon-arrow-bottom"></i></a></li>
+                <li><a href="">联系客服<i class="iconfont icon-arrow-bottom"></i></a></li>
+                <li><a href=""> <i class="iconfont icon-gengduo1 orangi"></i>网站导航<i
+                            class="iconfont icon-arrow-bottom"></i></a></li>
+
+
+            </ul>
+
+        </div>
+    </header>
+    <div class="search-box container ">
+        <div class="search-logo"><a href=""><i class="iconfont icon-taobaowanglogo orangi"></i></a></div>
+        <div class="search">
+            <span></span>
+            <input type="text">
+            <button class="button-search"> 搜索</button>
+
+        </div>
+    </div>
+    <div id="main" class="container">
+        <div class="goods-all">全部商品</div>
+        <div class="table-th-div  clearfix">
+            <div class="th th-che"><input type="checkbox"> <span>全选</span></div>
+            <div class="th th-details">商品信息</div>
+            <div class="th th-price">单价</div>
+            <div class="th th-num">数量</div>
+            <div class="th th-money">金额</div>
+            <div class="th th-ex">操作</div>
+        </div>
+        <div class="table-tb-div  clearfix">
+            <ul>
+                <li class="th-che"><input type="checkbox" class="check-one"></li>
+                <li class="th-details"> <img src="https://img.alicdn.com/imgextra/i3/725677994/O1CN017RSK6U28vImbMWx1y_!!725677994.jpg_40x40q90.jpg" alt="">华为mate40 pro </li>
+                <li class="th-price th-price1">6999</li>
+                <li class="th-num"> <span class="cut">-</span> <input type="text" class="goods-num" value="1"><span class="add">+</span></li>
+                <li class="th-money th-money1">6999</li>
+                <li class="th-ex"><b class="del">删除</b></li>
+            </ul>
+
+        </div>
+        <div class="count clearfix">
+            <div class="count-left"> <input type="checkbox" id="check-all"> 全选 <span>删除</span> </div>
+            <div class="count-right">
+                <ul>
+                    <li class="selected">已选商品<b class="num2">1</b>件</li>
+                    <li class="count-all">合计（不含运费）:<span class="allmoeny">6999</span></li>
+                    <li> <button>结 &nbsp;算</button></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <script>
+    $('.del').click(function (){
+        console.log(111)
+        $(this).parent().parent().remove()
+        
+    }      
+    )
+    $('.cut').click(function (){
+        console.log($('.goods-num').val())
+       var a= $('.goods-num').val();
+        a--
+        if(a<=1){
+          a=1
+        }  
+        $('.goods-num').val(a)
+
+        var price=parseInt($('.th-price1').text()) 
+        var allp= price* $('.goods-num').val()
+       
+        $('.th-money1').text(allp)
+        $('num2').text($('.goods-num').val())
+        $('allmoeny').text(allp)
+        
+    }      
+    )
+
+
+    $('.add').click(function (){
+        console.log(111)
+        var b= $('.goods-num').val();
+         b++
+        $('.goods-num').val(b)
+        var price=parseInt($('.th-price1').text()) 
+        var allp= price* $('.goods-num').val()
+        console.log($('.th-price1').text())
+        $('.th-money1').text(allp)
+        $('.num2').text($('.goods-num').val())
+        $('.allmoeny').text(allp)
+    })
+    /*  var money=$('.check-one')
+
+        ondowm()
+        async function ondowm() {
+            var date = await $.ajax({
+                url: '../interface/showlist.php',
+            })
+            date = JSON.parse(date);
+            if (date.code == 1) {
+                $('.table-tb-div').empty()
+                date = date.data
+                $.each(date, function (index, item) {
+                    var moeny = item.product_num * item.product_price
+                    item.product_num = item.product_num * 1
+                    $('.table-tb-div').append(
+                        `  <ul>
+                <li class="th-che"><input type="checkbox"> <i> ${item.product_id}</i> </li>
+                <li class="th-details"> <img src="https://img.alicdn.com/imgextra/i3/725677994/O1CN017RSK6U28vImbMWx1y_!!725677994.jpg_40x40q90.jpg" alt="">${item.product_name} </li>
+                <li class="th-price">${item.product_price}</li>
+                <li class="th-num"> <span class-cut>-</span> <input type="text" class="goods-num  value="${item.product_num}"><span class=add>+</span></li>
+                <li class="th-money">${moeny}</li>
+                <li class="th-ex"><b class=del>删除</b></li>
+            </ul>
+                        `
+                    )
+
+                })
+            }
+
+
+        }
+
+        $('.table-tb-div').on('click','.del', function () {
+            var that = $(this);
+          console.log(that.parents('li').parents('ul').children().eq(0).children().eq(1).html())
+           console.log(that.parents('li').parents('ul').children().eq(0).children().eq(1).html())
+            $.ajax({
+                url: "../interface/del.php",
+                data: {
+                    id:that.parents('li').parents('ul').children().eq(0).children().eq(1).html()
+                },
+                dataType: "json",
+                success: function (res) {    
+                    console.log(res)   
+                    ondowm();
+                  
+              
+                }
+            })
+        }) */
+    </script>
+
+
+    <div id="empty"></div>
+    <div id="footer">
+
+        <div class="foot-last">
+            <div class="foot-intro container">
+                <ul class="foot-ul1 clearfix">
+                    <li><a href="">关于天猫</a></li>
+                    <li><a href="">帮助中心</a></li>
+                    <li><a href="">开放平台</a></li>
+                    <li><a href="">诚聘英才</a></li>
+                    <li><a href="">联系我们</a></li>
+                    <li><a href="">网站合作</a></li>
+                    <li><a href="">法律声明</a></li>
+                    <li><a href="">隐私权政策</a></li>
+                    <li><a href="">知识产权</a></li>
+                    <li><a href="">廉正举报</a></li>
+                    <li><a href="">规则意见征集</a></li>
+
+
+                </ul>
+                <ul class="foot-ul1 clearfix">
+                    <li><a href="">阿里巴巴集团</a>&nbsp;|</li>
+                    <li><a href="">淘宝网</a>&nbsp;|</li>
+                    <li><a href="">天猫</a>&nbsp;|</li>
+                    <li><a href="">聚划算</a>&nbsp;|</li>
+                    <li><a href="">全球速卖通</a>&nbsp;|</li>
+                    <li><a href="">阿里巴巴国际交易市场</a>&nbsp;|</li>
+                    <li><a href="">1688</a>&nbsp;|</li>
+                    <li><a href="">阿里妈妈</a>&nbsp;|</li>
+                    <li><a href="">飞猪</a>&nbsp;|</li>
+                    <li><a href="">廉正举报</a>&nbsp;|</li>
+                    <li><a href="">AliOS</a>&nbsp;|</li>
+                    <li><a href="">阿里通信</a>&nbsp;|</li>
+                    <li><a href="">万网</a>&nbsp;|</li>
+                    <li><a href="">高德</a>&nbsp;|</li>
+                    <li><a href="">友盟</a>&nbsp;|</li>
+                    <li><a href="">钉钉</a>&nbsp;|</li>
+                    <li><a href="">虾米</a>&nbsp;|</li>
+                    <li><a href="">钉钉</a>&nbsp;|</li>
+                    <li><a href="">阿里安全</a>&nbsp;|</li>
+                </ul>
+                <p class="foot-p p-hl">
+                    <span class="foot-span">增值电信业务经营许可证： 浙B2-20110446</span>
+                    <span class="foot-span"> 市场名称登记证：工商网市字3301004119号</span>
+                    <span class="foot-span"> 出版物网络交易平台服务经营备案证： 新出发浙备字第2019002号</span>
+                </p>
+                <p class="foot-p">
+                    <span>互联网违法和不良信息举报电话：0571-81683755 blxxjb@alibaba-inc.com</span>
+                    <span>互联网药品信息服务资质证书编号：浙-（经营性）-2017-0005</span>
+                    <span> 浙公网安备 33010002000120号</span>
+                </p>
+                <p class="foot-p">
+                    <span>医疗器械网络交易服务第三方平台备案：（浙）网械平台备字[2018]第00002号</span>
+                </p>
+                <p class="foot-p">
+                    <span>浙江省网络食品销售第三方平台提供者备案：浙网食A33010002</span>
+                    <span> 12318举报</span>
+
+                </p>
+                <p class="foot-p">
+                    <span>© 2003-2020 TMALL.COM 版权所有</span>
+
+                </p>
+                <p class="foot-p">
+                    <a href=""><img src="https://img.alicdn.com/tfs/TB1MQX3cBr0gK0jSZFnXXbRRXXa-65-70.gif" alt=""></a>
+                    <a href=""><img src="https://img.alicdn.com/tps/i1/TB13mgzHXXXXXbjXVXXzby4IVXX-80-30.jpg"
+                            alt=""></a>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

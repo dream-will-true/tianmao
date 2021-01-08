@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册账户</title>
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../css/regg.css">
+    <link rel="stylesheet" href="../css/iconfont.css">
+    <script src="../js/jquery1.12.4.min.js"></script>
+</head>
+
+<body>
+    <header id="header" class=" container clearfix">
+        <a href="./index.html" class="left">
+            <i class="iconfont icon-taobaowanglogo"></i>
+            <i class="iconfont icon-taobaowangzimu"></i>
+        </a>
+        <a href="https://survey.taobao.com/survey/Q095thIx2" class="right">
+            <i class="iconfont icon-xinxi2"></i>"登录页面改进建议"
+        </a>
+    </header>
+    <div id="main clearfix">
+        <div class="alert">
+            <p>注册成功!</p>
+        </div>
+        <div class="form">
+            <h2>欢迎注册淘宝账户</h2>
+            <div>
+                <p class="name">用户名：</p>
+                <input type="text" name="" id="user-name" placeholder="请输入新的用户名">
+            </div>
+            <div>
+                <p class="mm">密码：</p>
+                <input type="password" name="" id="user-pd"  placeholder="请使用英文或者数字">
+            </div>
+
+            <div>
+                <p class="queren">确认密码：</p>
+                <input type="password" name="" id="user-pd1" placeholder="请在输入一次密码">
+            </div>
+            <button id='register'>点击注册</button>
+
+            <script>
+                $('#register').click(function () {
+                    console.log($('#user-name').val())
+                    if ($('#user-name').val() == '') {
+                        $('.name').html("用户名不能为空").css(
+                            {
+                                fontSize: '12px',
+                                color: 'red'
+                            }
+                        )
+                    
+                    } else {
+                        if($('#user-pd').val() == ''){
+                            $('.mm').html("密码不能为空").css(
+                            {
+                                fontSize: '12px',
+                                color: 'red'
+                            }
+                        )
+                        }else{
+                            if ($('#user-pd').val() == $('#user-pd1').val()) {
+                            $.ajax({
+                                url: "../api/reg.json",
+                                data: {
+                                    userName: $('#user-name').val(),
+                                    password: $('#user-pd').val()
+                                },
+                                dataType: 'json',
+                                success: function (data) {
+                                    if (data.code == 1) {
+                                       localStorage.setItem( $('#user-name').val(),$('#user-pd').val())
+                                        $('.alert').slideDown(300)
+                                        clearTimeout(timer)
+                                        var timer = setTimeout(function () {
+                                            $('.alert').slideUp()
+
+                                            location.href = "./login.html"
+                                        }, 1000)
+                                    }
+                                }
+                            })
+                        } else {
+                            $('.queren').html("两次密码不一致").css(
+                                {
+                                    fontSize: '12px',
+                                    color: 'red'
+                                }
+                            )
+                        }
+                        }
+                        
+                    }
+
+                })
+
+            </script>
+
+
+        </div>
+    </div>
+    <div id="footer">
+        <div class="foot-before clearfix">
+            <div class="container">
+                <!-- <div class="after-sale clearfix">
+                 <a href=""></a>
+                    <a href=""></a>
+                    <a href=""></a>
+                    <a href=""></a> 
+                </div> -->
+                <div class="shopping-nav">
+                    <dl>
+                        <dt>购物指南</dt>
+                        <dd><a href="">免费注册</a> </dd>
+                        <dd> <a href="">开源支付宝</a> </dd>
+                        <dd> <a href="">支付宝充值</a> </dd>
+                    </dl>
+                    <dl>
+                        <dt>天猫保障</dt>
+                        <dd><a href="">发货保障</a> </dd>
+                        <dd> <a href="">售后规则</a> </dd>
+                        <dd> <a href="">缺货赔付</a> </dd>
+                    </dl>
+                    <dl>
+                        <dt>支付方式</dt>
+                        <dd><a href="">快捷支付</a> </dd>
+                        <dd> <a href="">信用卡</a> </dd>
+                        <dd> <a href="">余额宝</a> </dd>
+                        <dd> <a href="">蚂蚁花呗</a> </dd>
+                        <dd> <a href="">货到付款</a> </dd>
+                    </dl>
+                    <dl>
+                        <dt>商家服务</dt>
+                        <dd><a href="">天猫规则</a> </dd>
+                        <dd> <a href="">商家入驻</a> </dd>
+                        <dd> <a href="">商家中心</a> </dd>
+                        <dd> <a href="">天猫智库</a> </dd>
+                        <dd> <a href="">物流服务</a> </dd>
+                        <dd> <a href="">喵言喵语</a> </dd>
+                        <dd> <a href="">运营服务</a> </dd>
+                    </dl>
+                    <dl>
+                        <dt>手机天猫</dt>
+                        <dd> <a href=""> <img src="https://img.alicdn.com/tfscom/TB14MWoNhjaK1RjSZFAwu2dLFXa.png"
+                                    alt=""></a></dd>
+
+                    </dl>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="foot-last">
+            <div class="foot-intro container">
+                <ul class="foot-ul1 clearfix">
+                    <li><a href="">关于天猫</a></li>
+                    <li><a href="">帮助中心</a></li>
+                    <li><a href="">开放平台</a></li>
+                    <li><a href="">诚聘英才</a></li>
+                    <li><a href="">联系我们</a></li>
+                    <li><a href="">网站合作</a></li>
+                    <li><a href="">法律声明</a></li>
+                    <li><a href="">隐私权政策</a></li>
+                    <li><a href="">知识产权</a></li>
+                    <li><a href="">廉正举报</a></li>
+                    <li><a href="">规则意见征集</a></li>
+
+
+                </ul>
+                <ul class="foot-ul1 clearfix">
+                    <li><a href="">阿里巴巴集团</a>&nbsp;|</li>
+                    <li><a href="">淘宝网</a>&nbsp;|</li>
+                    <li><a href="">天猫</a>&nbsp;|</li>
+                    <li><a href="">聚划算</a>&nbsp;|</li>
+                    <li><a href="">全球速卖通</a>&nbsp;|</li>
+                    <li><a href="">阿里巴巴国际交易市场</a>&nbsp;|</li>
+                    <li><a href="">1688</a>&nbsp;|</li>
+                    <li><a href="">阿里妈妈</a>&nbsp;|</li>
+                    <li><a href="">飞猪</a>&nbsp;|</li>
+                    <li><a href="">廉正举报</a>&nbsp;|</li>
+                    <li><a href="">AliOS</a>&nbsp;|</li>
+                    <li><a href="">阿里通信</a>&nbsp;|</li>
+                    <li><a href="">万网</a>&nbsp;|</li>
+                    <li><a href="">高德</a>&nbsp;|</li>
+                    <li><a href="">友盟</a>&nbsp;|</li>
+                    <li><a href="">钉钉</a>&nbsp;|</li>
+                    <li><a href="">虾米</a>&nbsp;|</li>
+                    <li><a href="">钉钉</a>&nbsp;|</li>
+                    <li><a href="">阿里安全</a>&nbsp;|</li>
+                </ul>
+                <p class="foot-p p-hl">
+                    <span class="foot-span">增值电信业务经营许可证： 浙B2-20110446</span>
+                    <span class="foot-span"> 市场名称登记证：工商网市字3301004119号</span>
+                    <span class="foot-span"> 出版物网络交易平台服务经营备案证： 新出发浙备字第2019002号</span>
+                </p>
+                <p class="foot-p">
+                    <span>互联网违法和不良信息举报电话：0571-81683755 blxxjb@alibaba-inc.com</span>
+                    <span>互联网药品信息服务资质证书编号：浙-（经营性）-2017-0005</span>
+                    <span> 浙公网安备 33010002000120号</span>
+                </p>
+                <p class="foot-p">
+                    <span>医疗器械网络交易服务第三方平台备案：（浙）网械平台备字[2018]第00002号</span>
+                </p>
+                <p class="foot-p">
+                    <span>浙江省网络食品销售第三方平台提供者备案：浙网食A33010002</span>
+                    <span> 12318举报</span>
+
+                </p>
+                <p class="foot-p">
+                    <span>© 2003-2020 TMALL.COM 版权所有</span>
+
+                </p>
+                <p class="foot-p">
+                    <a href=""><img src="https://img.alicdn.com/tfs/TB1MQX3cBr0gK0jSZFnXXbRRXXa-65-70.gif" alt=""></a>
+                    <a href=""><img src="https://img.alicdn.com/tps/i1/TB13mgzHXXXXXbjXVXXzby4IVXX-80-30.jpg"
+                            alt=""></a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
