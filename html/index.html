@@ -27,7 +27,7 @@
         <script>
        var time=setInterval(countTime,1000)
  function countTime (){
-    var aimTime=new Date('2021/1/11 16:42:30')
+    var aimTime=new Date('2021/1/14 16:42:30')
     var nowTime=new Date()
     var getTime=(aimTime-nowTime)/1000
   
@@ -69,7 +69,7 @@
                     </div>
                     <b></b>
                 </li>
-                <li><a href=""> 购物车</a></li>
+                <li><a href="./echar.html"> 购物车</a></li>
                 <li class="lihover-two">
                     <a href="">收藏夹</a>
                     <div class="taobao-hd dp">
@@ -107,8 +107,8 @@
     function showUser() {
         var user = getUser();
       
-        // if (user.length) {
-            console.log(  user)
+        if (user.length>0) {
+            console.log( user)
             $('.login').empty();
             $('.login').show();
             $('.login').remove();
@@ -117,15 +117,23 @@
             $('.header-login').append(`
               
                     <a href="javascript"  class="login">${user}</a>
+                    <span class="tuichu">退出登录</span>
+                    
               `)
-        } 
-    //     else {
-    //         $('.user-phone').hide();
-    //         $('.wp-user').show();
-    //         $('.register-user').show();
-    //     }
-    // }
+        } else {
+          `  <span>嗨，欢迎来到天猫</span>
+                <a href="./login.html" class="login">登录</a>
+                <a href="./reg.html" class="zc">免费注册</a>`
+        }
+    }
 </script>
+  <script>
+      $('.tuichu').click(function(){
+          localStorage.removeItem("phone")
+          location.reload()
+          console.log(11)
+      })
+  </script>
     <div class="container">
         <div class="logo-nav">
             <a href=""> <img src="https://img.alicdn.com/tfs/TB1ztBlaMMPMeJjy1XbXXcwxVXa-200-60.png" alt=""></a>
