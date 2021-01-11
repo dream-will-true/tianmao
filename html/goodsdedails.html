@@ -176,6 +176,7 @@
                 <button id="add-echar"
                     data-img="https://img.alicdn.com/imgextra/i3/725677994/O1CN017RSK6U28vImbMWx1y_!!725677994.jpg_40x40q90.jpg"
                     data-id="555233" data-name="华为mate 40 pro" data-price="6999" data-num="1">加入超市购物车</button>
+                    <a href="./echar.html"  class="gouwuche">我的购物车</a>
                 <script>
                     /*    $('#add-echar').click(async function(){
                                console.log(111)
@@ -251,9 +252,11 @@
                     }
                     // 点击加入购物车
                     $('#add-echar').click(function () {
-
+                     
+                     
                         // 如果有同id商品，不能直接push，要把num增加
                         numadd()
+                        alert('添加商品成功')
                         // 存回本地存储
                      
 

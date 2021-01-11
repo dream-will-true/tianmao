@@ -514,7 +514,19 @@
      outline: none;
      cursor: pointer;
 }
-
+.gouwuche{
+    display: inline-block;
+    width: 180px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #ff0036;
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
 .details-img {
     margin-left: 176px;
     margin-top: 50px;

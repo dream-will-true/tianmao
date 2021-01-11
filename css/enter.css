@@ -38,7 +38,7 @@
     font-size: 12px;
 }
 #page .login-newbg{
-   
+    min-width: 1230px;
     height: 600px;
     background: url(https://img.alicdn.com/imgextra/i2/O1CN01VxKfH71Xry8AWSkgo_!!6000000002978-0-tps-2500-600.jpg) no-repeat;
     background-size: cover;
