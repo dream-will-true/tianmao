@@ -382,7 +382,6 @@
 /* 淘宝主体 */
 #main{
     background-color: #f5f5f5;
-    width: 100%;
     overflow: hidden;
 }
 #main .floor-jump{
