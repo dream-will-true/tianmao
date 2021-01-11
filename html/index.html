@@ -27,7 +27,7 @@
         <script>
        var time=setInterval(countTime,1000)
  function countTime (){
-    var aimTime=new Date('2021/1/8 16:42:30')
+    var aimTime=new Date('2021/1/11 16:42:30')
     var nowTime=new Date()
     var getTime=(aimTime-nowTime)/1000
   
@@ -96,8 +96,9 @@
 
 
     </div>
-    <script>  function getUser() {
-        var item = localStorage.getItem("cc");
+    <script>  
+    function getUser() {
+        var item = localStorage.getItem('phone');
         return (item);
         // console.log(item)
     }
@@ -106,7 +107,7 @@
     function showUser() {
         var user = getUser();
       
-        if (user =='cc') {
+        // if (user.length) {
             console.log(  user)
             $('.login').empty();
             $('.login').show();
@@ -117,12 +118,13 @@
               
                     <a href="javascript"  class="login">${user}</a>
               `)
-        } else {
-            $('.user-phone').hide();
-            $('.wp-user').show();
-            $('.register-user').show();
-        }
-    }
+        } 
+    //     else {
+    //         $('.user-phone').hide();
+    //         $('.wp-user').show();
+    //         $('.register-user').show();
+    //     }
+    // }
 </script>
     <div class="container">
         <div class="logo-nav">

@@ -114,9 +114,15 @@
                              )
 
 
+                             function setuser(){
+                                 localStorage.setItem('phone',$('#input-id').val())
+                             }
+
+
 
                           
                         $('.submit').click( function(){
+                            setuser()
                          var userId=$('#input-id').val()
                          var userPassWord=$('#input-password').val()
                          if(userPassWord==  localStorage.getItem($('#input-id').val())){

@@ -55,9 +55,12 @@
         <div class="table-tb-div  clearfix">
             <ul>
                 <li class="th-che"><input type="checkbox" class="check-one"></li>
-                <li class="th-details"> <img src="https://img.alicdn.com/imgextra/i3/725677994/O1CN017RSK6U28vImbMWx1y_!!725677994.jpg_40x40q90.jpg" alt="">华为mate40 pro </li>
+                <li class="th-details"> <img
+                        src="https://img.alicdn.com/imgextra/i3/725677994/O1CN017RSK6U28vImbMWx1y_!!725677994.jpg_40x40q90.jpg"
+                        alt="">华为mate40 pro </li>
                 <li class="th-price th-price1">6999</li>
-                <li class="th-num"> <span class="cut">-</span> <input type="text" class="goods-num" value="1"><span class="add">+</span></li>
+                <li class="th-num"> <span class="cut">-</span> <input type="text" class="goods-num" value="1"><span
+                        class="add">+</span></li>
                 <li class="th-money th-money1">6999</li>
                 <li class="th-ex"><b class="del">删除</b></li>
             </ul>
@@ -76,97 +79,156 @@
 
     </div>
     <script>
-    $('.del').click(function (){
-        console.log(111)
-        $(this).parent().parent().remove()
-        
-    }      
-    )
-    $('.cut').click(function (){
-        console.log($('.goods-num').val())
-       var a= $('.goods-num').val();
-        a--
-        if(a<=1){
-          a=1
-        }  
-        $('.goods-num').val(a)
-
-        var price=parseInt($('.th-price1').text()) 
-        var allp= price* $('.goods-num').val()
-       
-        $('.th-money1').text(allp)
-        $('num2').text($('.goods-num').val())
-        $('allmoeny').text(allp)
-        
-    }      
-    )
-
-
-    $('.add').click(function (){
-        console.log(111)
-        var b= $('.goods-num').val();
-         b++
-        $('.goods-num').val(b)
-        var price=parseInt($('.th-price1').text()) 
-        var allp= price* $('.goods-num').val()
-        console.log($('.th-price1').text())
-        $('.th-money1').text(allp)
-        $('.num2').text($('.goods-num').val())
-        $('.allmoeny').text(allp)
-    })
-    /*  var money=$('.check-one')
-
-        ondowm()
-        async function ondowm() {
-            var date = await $.ajax({
-                url: '../interface/showlist.php',
-            })
-            date = JSON.parse(date);
-            if (date.code == 1) {
-                $('.table-tb-div').empty()
-                date = date.data
-                $.each(date, function (index, item) {
-                    var moeny = item.product_num * item.product_price
-                    item.product_num = item.product_num * 1
-                    $('.table-tb-div').append(
-                        `  <ul>
+        var money = $('.check-one')
+        // 渲染页面函数
+        function ondowm() {
+            var a = localStorage.getItem('cart')
+            a = JSON.parse(a)
+            $('.table-tb-div').empty()
+            $.each(a, function (index, item) {
+                var moeny = item.product_num * item.product_price
+                item.product_num = item.product_num * 1
+                $('.table-tb-div').append(
+                    `  <ul>
                 <li class="th-che"><input type="checkbox"> <i> ${item.product_id}</i> </li>
                 <li class="th-details"> <img src="https://img.alicdn.com/imgextra/i3/725677994/O1CN017RSK6U28vImbMWx1y_!!725677994.jpg_40x40q90.jpg" alt="">${item.product_name} </li>
                 <li class="th-price">${item.product_price}</li>
-                <li class="th-num"> <span class-cut>-</span> <input type="text" class="goods-num  value="${item.product_num}"><span class=add>+</span></li>
+                <li class="th-num"> <span class="cut">-</span> <input type="text" class="goods-num"  value="${item.product_num}"><span class='add'>+</span></li>
                 <li class="th-money">${moeny}</li>
                 <li class="th-ex"><b class=del>删除</b></li>
-            </ul>
-                        `
-                    )
-
-                })
-            }
-
-
+            </ul>                     `
+                )
+            })
         }
-
-        $('.table-tb-div').on('click','.del', function () {
+        // 渲染页面
+        ondowm()
+        //获取本地存储的值
+        function getItem() {
+            var getdata = localStorage.getItem('cart')
+            getdata = JSON.parse(getdata)
+            return getdata
+        }
+        //设置即更新本地存储的值
+        function setItem(arr) {
+            localStorage.setItem('cart', JSON.stringify(arr))
+        }
+        //删除 并更新本地存储的值
+        $('.table-tb-div').on('click', '.del', function () {
             var that = $(this);
-          console.log(that.parents('li').parents('ul').children().eq(0).children().eq(1).html())
-           console.log(that.parents('li').parents('ul').children().eq(0).children().eq(1).html())
-            $.ajax({
-                url: "../interface/del.php",
-                data: {
-                    id:that.parents('li').parents('ul').children().eq(0).children().eq(1).html()
-                },
-                dataType: "json",
-                success: function (res) {    
-                    console.log(res)   
-                    ondowm();
-                  
-              
+
+            var product = getItem()
+            console.log(product)
+            var id = that.parents('li').parents('ul').children().eq(0).children().eq(1).html()
+            // $.each(product,function(index,item){         
+            //     if(id==item.product_id){
+            //         // product.splice(index,1)   第一种删除方法                       
+            //     }
+            // })
+            product = product.filter(function (item) {
+                if (id == item.product_id) {
+                    return false
+                } else {
+                    return true
                 }
             })
-        }) */
-    </script>
+
+            setItem(product)
+            ondowm()
+
+        })
+        //减少  并更新本地存储的值
+        $('.table-tb-div').on('click', '.cut', function () {   
+            var a = $('.goods-num').val();
+            a--
+            if (a <= 1) {
+                a = 1
+            }
+            $('.goods-num').val(a)
+
+            var price = parseInt($('.th-price1').text())
+            var allp = price * $('.goods-num').val()
+
+            $('.th-money1').text(allp)
+            $('num2').text($('.goods-num').val())
+            $('allmoeny').text(allp)
+
+            var product = getItem()
+
+            var id = $(this).parents('li').parents('ul').children().eq(0).children().eq(1).html()
+            $.each(product, function (index, item) {
+                if (id == item.product_id) {
+                    if (item.product_num <= 0) {
+                        alert('商品数量不能少于0')
+                        item.product_num = 0
+                    } else {
+                        item.product_num = item.product_num - 1
+                    }
+
+                }
+            })
+            // product = product.filter(function (item) {
+            //     if (id == item.product_id) {
+            //         return false
+            //     } else {
+            //         return true
+            //     }
+            // })
+
+            setItem(product)
+            ondowm()
 
 
+
+
+
+        })
+        //增加  并更新本地存储的值
+        $('.table-tb-div').on('click', '.add', function () {  
+            var b = $('.goods-num').val();
+            b++
+            $('.goods-num').val(b)
+            var price = parseInt($('.th-price1').text())
+            var allp = price * $('.goods-num').val()
+            $('.th-money1').text(allp)
+            $('.num2').text($('.goods-num').val())
+            $('.allmoeny').text(allp)
+            var product = getItem()
+          
+            var id = $(this).parents('li').parents('ul').children().eq(0).children().eq(1).html()
+            $.each(product, function (index, item) {
+                if (id == item.product_id) {
+                 item.product_num = +item.product_num +1      
+                 console.log(  item.product_num)    
+                }
+            })
+            setItem(product)
+        })
+        //直接设置输入框的值并更新本地存储的值
+        $('.table-tb-div').on('input', '.goods-num', function (){
+            
+            var a = $('.goods-num').val();
+
+            var price = parseInt($('.th-price1').text())
+            var allp = price * $('.goods-num').val()
+
+            $('.th-money1').text(allp)
+            $('num2').text($('.goods-num').val())
+            $('allmoeny').text(allp)
+
+            var product = getItem()
+
+            var id = $(this).parents('li').parents('ul').children().eq(0).children().eq(1).html()
+            $.each(product, function (index, item) {
+                if (id == item.product_id) {
+                        item.product_num = a          
+
+                }
+            })
+            setItem(product)
+            ondowm()
+
+        })
+ </script>
     <div id="empty"></div>
     <div id="footer">
 
